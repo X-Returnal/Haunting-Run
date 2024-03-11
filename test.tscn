@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://o3v2fenocp7p"]
+[gd_scene load_steps=8 format=3 uid="uid://o3v2fenocp7p"]
 
+[ext_resource type="Script" path="res://level.gd" id="1_arsve"]
 [ext_resource type="PackedScene" uid="uid://dwbijnjft7fr6" path="res://lemm_spawn.tscn" id="2_qxu83"]
 [ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://lemm_area.tscn" id="2_xi7bc"]
 [ext_resource type="PackedScene" uid="uid://dgo23c8ky1rge" path="res://camera.tscn" id="3_v6jks"]
@@ -12,6 +13,7 @@ size = Vector2(1186, 64.5)
 size = Vector2(166.375, 198.813)
 
 [node name="test" type="Node2D"]
+script = ExtResource("1_arsve")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -63,3 +65,4 @@ gravity = -4096.0
 modx = 2.0
 modjump = true
 isgoal = true
+generic_goal = 50
