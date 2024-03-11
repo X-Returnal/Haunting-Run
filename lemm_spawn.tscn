@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwbijnjft7fr6"]
+
+[ext_resource type="Script" path="res://lemm_spawn.gd" id="1_q0t2t"]
+[ext_resource type="PackedScene" uid="uid://d0oym78vw24c3" path="res://lemm.tscn" id="2_74h6r"]
+
+[node name="lemm_spawn" type="Node2D"]
+script = ExtResource("1_q0t2t")
+unit_spawn = ExtResource("2_74h6r")
+
+[node name="Marker2D" type="Marker2D" parent="."]
