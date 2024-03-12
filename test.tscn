@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://o3v2fenocp7p"]
+[gd_scene load_steps=9 format=3 uid="uid://o3v2fenocp7p"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_arsve"]
 [ext_resource type="PackedScene" uid="uid://dwbijnjft7fr6" path="res://lemm_spawn.tscn" id="2_qxu83"]
 [ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://lemm_area.tscn" id="2_xi7bc"]
 [ext_resource type="PackedScene" uid="uid://dgo23c8ky1rge" path="res://camera.tscn" id="3_v6jks"]
 [ext_resource type="PackedScene" uid="uid://dh1gtwy6bchqg" path="res://lemm_area_large.tscn" id="4_tv5dd"]
+[ext_resource type="PackedScene" uid="uid://n5d8qomxy7rg" path="res://ui.tscn" id="5_u33gf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twbn2"]
 size = Vector2(1186, 64.5)
@@ -57,6 +58,8 @@ limit_spawn = 50
 position = Vector2(576, 327)
 limit = Vector4(-2048, -2048, 2048, 2048)
 
+[node name="ui" parent="Camera2D" instance=ExtResource("5_u33gf")]
+
 [node name="lemm_area_large" parent="." instance=ExtResource("4_tv5dd")]
 position = Vector2(74, 480)
 gravity_point_center = Vector2(1, 0)
@@ -66,3 +69,9 @@ modx = 2.0
 modjump = true
 isgoal = true
 generic_goal = 50
+win_str = "Get all in goal!"
+
+[node name="finish_check_delay" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="finish_check_delay" to="." method="_on_finish_check_delay_timeout"]

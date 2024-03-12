@@ -9,13 +9,14 @@ extends Area2D
 @export var lemm_count = 0
 @export var generic_goal = 0
 
-@export var win_int = 0
+@export var win_str = "add details"
 
 
 func _ready():
 	
 	if isgoal:
-		$"..".set_goal(win_int)
+		# using $".." may cause problems in the future when organizing level trees
+		$"..".set_goal(win_str)
 
 
 
@@ -26,8 +27,8 @@ func _on_body_entered(body):
 			body.x_direction = modx
 			body.jumping = modjump
 		if isgoal:
-			if lemm_count> generic_goal:
-				$"..".clear_goal(win_int)
+			if lemm_count >= generic_goal:
+				$"..".clear_goal(win_str)
 				
 			body.die()
 		if isdeath:

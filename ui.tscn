@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://n5d8qomxy7rg"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_uuirf"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuirf")
+
+[node name="progress" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = -320.0
+offset_right = 566.0
+offset_bottom = -265.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 565.0
+offset_right = 1154.0
+offset_bottom = 651.0
+grow_vertical = 0
+
+[node name="victory" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 106.0
+offset_right = 44.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Suceed!!!"
