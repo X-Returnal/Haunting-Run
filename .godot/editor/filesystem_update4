@@ -11,3 +11,5 @@ res://ui.tscn
 res://ui.gd
 res://demo.tscn
 res://demo1.tscn
+res://tool.gd
+res://tool.tscn

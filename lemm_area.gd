@@ -9,7 +9,7 @@ extends Area2D
 @export var lemm_count = 0
 @export var generic_goal = 0
 
-@export var win_str = "add details"
+@export var win_str = "add details on how to complete"
 
 
 func _ready():
