@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0oym78vw24c3"]
+[gd_scene load_steps=6 format=3 uid="uid://d0oym78vw24c3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qqqso"]
 [ext_resource type="Texture2D" uid="uid://b50bbs265au0y" path="res://icon.svg" id="2_774j3"]
@@ -6,6 +6,12 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6d3tp"]
 radius = 8.0
 height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_l48k0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t4c4s"]
+gradient = SubResource("Gradient_l48k0")
+fill_to = Vector2(0, 1)
 
 [node name="lemm" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -17,3 +23,11 @@ texture = ExtResource("2_774j3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6d3tp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, -32)
+scale = Vector2(107.539, 86.4141)
+energy = 0.1
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_t4c4s")

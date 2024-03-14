@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://tool.gd" id="1_0wm8u"]
 
 [node name="tool" type="Button" groups=["tool"]]
+custom_minimum_size = Vector2(64, 0)
 offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_0wm8u")

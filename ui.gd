@@ -1,5 +1,5 @@
 extends Control
-var tools = []
+var active_tool = []
 var scene = preload("res://tool.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +17,11 @@ func fill_toolbox():
 	for toolset in $"../..".toolbox:
 		var instance = scene.instantiate()
 		$HBoxContainer.add_child(instance)
-		instance.toolmodx = toolset[0]
-		instance.tooljump = toolset[1]
-		instance.toolamount = toolset[2]
+		
+		instance.toolid = toolset
 
+func resettools():
+	#nuke current tool buttons
+	get_tree().call_group("tool","sd")
+	#and replace them with fresh
+	
