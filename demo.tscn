@@ -23,7 +23,7 @@ polygon = PackedVector2Array(18, 6, 197, 2, 197, -65, -40, -61, -45, -137, -212,
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dhkgv"]
 gradient = SubResource("Gradient_i78jg")
 
-[node name="test" type="Node2D"]
+[node name="level" type="Node2D"]
 script = ExtResource("1_ghf1v")
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -16,7 +16,7 @@ func _ready():
 	
 	if isgoal:
 		# using $".." may cause problems in the future when organizing level trees
-		$"..".set_goal(win_str)
+		$/root/level.set_goal(win_str)
 
 
 
@@ -28,7 +28,7 @@ func _on_body_entered(body):
 			body.jumping = modjump
 		if isgoal:
 			if lemm_count >= generic_goal:
-				$"..".clear_goal(win_str)
+				$/root/level.clear_goal(win_str)
 				
 			body.die()
 		if isdeath:
