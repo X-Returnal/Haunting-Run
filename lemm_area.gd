@@ -15,7 +15,6 @@ extends Area2D
 func _ready():
 	
 	if isgoal:
-		# using $".." may cause problems in the future when organizing level trees
 		$/root/level.set_goal(win_str)
 
 
