@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jljwllfgwoar"]
+[gd_scene load_steps=11 format=3 uid="uid://jljwllfgwoar"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ghf1v"]
 [ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://lemm_area.tscn" id="2_p452u"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dgo23c8ky1rge" path="res://camera.tscn" id="4_bg00j"]
 [ext_resource type="PackedScene" uid="uid://n5d8qomxy7rg" path="res://ui.tscn" id="5_7rtp0"]
 [ext_resource type="PackedScene" uid="uid://dh1gtwy6bchqg" path="res://lemm_area_large.tscn" id="6_2coxv"]
-[ext_resource type="PackedScene" uid="uid://d0oym78vw24c3" path="res://lemm.tscn" id="7_6e0lb"]
 [ext_resource type="Texture2D" uid="uid://b50bbs265au0y" path="res://icon.svg" id="8_svldv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twbn2"]
@@ -17,11 +16,6 @@ size = Vector2(166.375, 198.813)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_up4mx"]
 polygon = PackedVector2Array(18, 6, 197, 2, 197, -65, -40, -61, -45, -137, -212, -134, -240, -67, -575, -63, -828, -69, -840, 109, -735, 391, -593, 65, -509, 29, -285, 12, -209, 65, -44, 66, -36, 19)
-
-[sub_resource type="Gradient" id="Gradient_i78jg"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dhkgv"]
-gradient = SubResource("Gradient_i78jg")
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_ghf1v")
@@ -63,7 +57,6 @@ modx = -0.5
 
 [node name="lemm_area3" parent="." instance=ExtResource("2_p452u")]
 position = Vector2(811, 450)
-scale = Vector2(1.15002, 0.952756)
 modx = -1.0
 modjump = true
 
@@ -100,18 +93,5 @@ win_str = "Get all in goal!"
 
 [node name="finish_check_delay" type="Timer" parent="."]
 autostart = true
-
-[node name="lemm" parent="." instance=ExtResource("7_6e0lb")]
-position = Vector2(-42, 229)
-
-[node name="PointLight2D2" type="PointLight2D" parent="lemm"]
-position = Vector2(110.25, -48.7502)
-scale = Vector2(107.539, 86.4141)
-range_z_min = -500
-range_z_max = 500
-shadow_enabled = true
-shadow_filter = 1
-texture = SubResource("GradientTexture2D_dhkgv")
-texture_scale = 0.55
 
 [connection signal="timeout" from="finish_check_delay" to="." method="_on_finish_check_delay_timeout"]

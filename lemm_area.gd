@@ -16,6 +16,13 @@ func _ready():
 	
 	if isgoal:
 		$/root/level.set_goal(win_str)
+	if modon:
+		if modjump:
+			$Director1.visible = true
+			$Director1.rotation = modx*20
+		else:
+			$Director2.visible = true
+			$Director1.rotation = modx*20
 
 
 

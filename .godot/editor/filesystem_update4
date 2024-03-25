@@ -1,13 +1,9 @@
 res://demo.tscn
-res://tool.gd
-res://ui.gd
 res://lemm.tscn
 res://lemm_area.tscn
 res://lemm_spawn.tscn
 res://camera.tscn
 res://lemm_area_large.tscn
-res://demo1.tscn
 res://ui.tscn
 res://tool.tscn
 res://lemm_area.gd
-res://player.gd
