@@ -8,18 +8,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$progress.text = "Goals:"
+	$"play menu/progress".text = "Goals:"
 	if $"../..".has_won:
-		$victory.visible=true
+		$"play menu/victory".visible=true
 	for goal_txt in $"../..".current_goals:
-		$progress.text+="\n"+goal_txt
+		$"play menu/progress".text+="\n"+goal_txt
 	
 func fill_toolbox():
+	
 	for toolset in $"../..".toolbox:
 		var instance = scene.instantiate()
-		$HBoxContainer.add_child(instance)
+		$"edit menu/HBoxContainer".add_child(instance)
 		instance.select.connect(on_button_select)
 		instance.toolid = toolset
+		instance.load_tool()
 
 func resettools():
 	#nuke current tool buttons

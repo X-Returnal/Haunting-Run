@@ -7,3 +7,5 @@ res://lemm_area_large.tscn
 res://ui.tscn
 res://tool.tscn
 res://lemm_area.gd
+res://tool.gd
+res://ui.gd

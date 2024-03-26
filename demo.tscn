@@ -21,7 +21,7 @@ polygon = PackedVector2Array(18, 6, 197, 2, 197, -65, -40, -61, -45, -137, -212,
 script = ExtResource("1_ghf1v")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(5034.5, 4152.5)
+position = Vector2(4968, 4149)
 scale = Vector2(107.539, 86.4141)
 texture = ExtResource("8_svldv")
 
@@ -85,6 +85,7 @@ position = Vector2(74, 480)
 gravity_point_center = Vector2(1, 0)
 gravity_direction = Vector2(1, 0)
 gravity = -4096.0
+modon = false
 modx = 2.0
 modjump = true
 isgoal = true

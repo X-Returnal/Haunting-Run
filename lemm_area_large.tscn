@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh1gtwy6bchqg"]
+[gd_scene load_steps=6 format=3 uid="uid://dh1gtwy6bchqg"]
 
 [ext_resource type="Script" path="res://lemm_area.gd" id="1_um4ub"]
+[ext_resource type="Texture2D" uid="uid://b5ww7e6wkx67j" path="res://director_0.png" id="2_elqah"]
+[ext_resource type="Texture2D" uid="uid://cb2hvpgi1pcj5" path="res://director_1.png" id="3_65a5a"]
+[ext_resource type="Texture2D" uid="uid://dgj4gphsdesb5" path="res://director_2.png" id="4_ys814"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlks3"]
 size = Vector2(90, 90)
@@ -10,5 +13,21 @@ script = ExtResource("1_um4ub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tlks3")
+
+[node name="Director0" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(5, 5)
+texture = ExtResource("2_elqah")
+
+[node name="Director1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+scale = Vector2(3, 3.5)
+texture = ExtResource("3_65a5a")
+
+[node name="Director2" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(3, 3)
+texture = ExtResource("4_ys814")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

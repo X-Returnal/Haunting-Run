@@ -5,6 +5,7 @@ extends Area2D
 @export var modjump = false
 @export var isgoal = false
 @export var isdeath = false
+@export var functon = true
 
 @export var lemm_count = 0
 @export var generic_goal = 0
@@ -13,16 +14,20 @@ extends Area2D
 
 
 func _ready():
-	
+	$Director1.set_visible(false)
+	$Director2.set_visible(false)
 	if isgoal:
 		$/root/level.set_goal(win_str)
 	if modon:
+		$Director0.set_visible(true)
 		if modjump:
-			$Director1.visible = true
-			$Director1.rotation = modx*20
+			$Director1.set_visible(true)
+			$Director1.rotation = modx
 		else:
-			$Director2.visible = true
-			$Director1.rotation = modx*20
+			$Director2.set_visible(true)
+			$Director2.rotation = modx
+	
+	monitoring = functon
 
 
 
