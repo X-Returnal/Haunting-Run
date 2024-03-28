@@ -21,17 +21,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="edit menu"]
+[node name="toolbox" type="HBoxContainer" parent="edit menu"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -576.0
 offset_top = 236.0
 offset_right = 576.0
 offset_bottom = 324.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="edit menu"]
+editor_description = "I have no idea why i had to put the buttons up high to have correct position"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -308.0
+offset_right = 56.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button2" type="Button" parent="edit menu/HBoxContainer2"]
+layout_mode = 2
+text = "Play!"
+
+[node name="Button" type="Button" parent="edit menu/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resety"
 
 [node name="play menu" type="Control" parent="."]
 process_mode = 1
@@ -43,7 +72,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="victory" type="Label" parent="play menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,8 +87,16 @@ grow_vertical = 2
 text = "Suceed!!!"
 
 [node name="progress" type="Label" parent="play menu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = 384.0
-offset_top = -324.0
+offset_top = -284.0
 offset_right = 576.0
-offset_bottom = -260.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "texp"

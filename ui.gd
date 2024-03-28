@@ -18,7 +18,7 @@ func fill_toolbox():
 	
 	for toolset in $"../..".toolbox:
 		var instance = scene.instantiate()
-		$"edit menu/HBoxContainer".add_child(instance)
+		$"edit menu/toolbox".add_child(instance)
 		instance.select.connect(on_button_select)
 		instance.toolid = toolset
 		instance.load_tool()
