@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5xtt"]
 size = Vector2(30, 30)
 
-[node name="lemm_area_small" type="Area2D"]
+[node name="lemm_area_small" type="Area2D" groups=["area"]]
 script = ExtResource("1_5v7gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

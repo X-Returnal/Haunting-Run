@@ -18,8 +18,14 @@ func _process(delta):
 	if spawned < limit_spawn or limit_spawn < 0:
 		progress += progress_speed*delta
 		if progress > 100:
-			var b = unit_spawn.instantiate()
-			owner.add_child(b)
-			b.transform = $Marker2D.global_transform
+			var lemm = unit_spawn.instantiate()
+			owner.add_child(lemm)
+			lemm.transform = $Marker2D.global_transform
 			spawned+=1
 			progress = 0
+
+
+
+func reset():
+	spawned = 0
+	progress = 0

@@ -5,6 +5,7 @@ extends Area2D
 @export var modjump = false
 @export var isgoal = false
 @export var isdeath = false
+@export var istool = false
 @export var functon = true
 
 @export var lemm_count = 0
@@ -26,11 +27,12 @@ func _ready():
 		else:
 			$Director2.set_visible(true)
 			$Director2.rotation = modx
-	
+	if istool:
+		add_to_group("tool")
 	monitoring = functon
 
-
-
+func tool_selfdestruct():
+	queue_free()
 func _on_body_entered(body):
 	if body.is_in_group("lemm"):
 		lemm_count += 1
@@ -44,3 +46,8 @@ func _on_body_entered(body):
 			body.die()
 		if isdeath:
 			body.die()
+			
+			
+func reset():
+	lemm_count = 0
+

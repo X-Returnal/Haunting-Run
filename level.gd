@@ -1,14 +1,12 @@
 extends Node2D
 
+#just realized that this can be set to a non empty string to make levels impossible. feature.
 @export var current_goals = [""]
 
 # player resource to solve level
 # format: x move(float), jump(bool), amount(int)
 @export var toolbox = [[1.0,true,1],[-.5,false,1],[-1.0, true,1]]
 var has_won = false
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 
@@ -23,7 +21,7 @@ func clear_goal(goal:String):
 
 
 func _on_finish_check_delay_timeout():
-	
+	#check if goals is a empty list (relatable)
 	if !current_goals:
 		# TODO: win()
 		has_won = true

@@ -1,18 +1,29 @@
 extends Button
-# format: x move(float), jump(bool), amount(int)
+# format: x move(float), jump(bool), amount(int), tool button [this scene](node)
 @export var toolid = []
 @export var unit_spawn:PackedScene
 signal select(data)
-func _ready():
-	pass
-func sd():
+
+func tool_selfdestruct():
 	queue_free()
+
+
 func _pressed():
+	#Use another singal to send data :thumbsup:
 	select.emit(toolid)
+
+func update_amount():
+	#small func to reduce cross script messiness by 1
+	text = str(toolid[2])
+
 func load_tool():
-	var b = unit_spawn.instantiate()
-	add_child(b)
-	b.modx = toolid[0]
-	b.modjump = toolid[1]
-	b.functon = false
-	b._ready()
+	var area = unit_spawn.instantiate()
+	add_child(area)
+	area.modx = toolid[0]
+	area.modjump = toolid[1]
+	area.functon = false
+	area.istool = true
+	area._ready()
+	text = str(toolid[2])
+	#FIXME: let me do my warcrimes to programing
+	toolid.insert(get_tree().get_current_scene(),3)
