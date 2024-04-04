@@ -66,6 +66,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Resety"
 
+[node name="maximum_bound" type="Marker2D" parent="edit menu"]
+position = Vector2(1024, 512)
+
+[node name="minimum_bound" type="Marker2D" parent="edit menu"]
+position = Vector2(128, 128)
+
 [node name="play menu" type="Control" parent="."]
 process_mode = 1
 layout_mode = 1
@@ -134,5 +140,6 @@ text = "Resety"
 
 [connection signal="pressed" from="edit menu/HBoxContainer2/play" to="." method="toggle_pause"]
 [connection signal="pressed" from="edit menu/HBoxContainer2/play" to="." method="reset_play"]
+[connection signal="pressed" from="edit menu/HBoxContainer2/resest" to="." method="resettools"]
 [connection signal="pressed" from="play menu/HBoxContainer3/pause" to="." method="toggle_pause"]
 [connection signal="pressed" from="play menu/HBoxContainer3/reset" to="." method="reset_play"]
