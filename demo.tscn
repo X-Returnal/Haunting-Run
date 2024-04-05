@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://jljwllfgwoar"]
+[gd_scene load_steps=10 format=3 uid="uid://jljwllfgwoar"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ghf1v"]
-[ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://lemm_area.tscn" id="2_p452u"]
 [ext_resource type="PackedScene" uid="uid://dwbijnjft7fr6" path="res://lemm_spawn.tscn" id="3_af8tb"]
 [ext_resource type="PackedScene" uid="uid://dgo23c8ky1rge" path="res://camera.tscn" id="4_bg00j"]
 [ext_resource type="PackedScene" uid="uid://n5d8qomxy7rg" path="res://ui.tscn" id="5_7rtp0"]
@@ -51,20 +50,6 @@ occluder = SubResource("OccluderPolygon2D_up4mx")
 position = Vector2(950, 601)
 occluder = SubResource("OccluderPolygon2D_up4mx")
 sdf_collision = false
-
-[node name="lemm_area" parent="." instance=ExtResource("2_p452u")]
-position = Vector2(942, 235)
-modx = -0.5
-
-[node name="lemm_area3" parent="." instance=ExtResource("2_p452u")]
-position = Vector2(811, 450)
-modx = -1.0
-modjump = true
-
-[node name="lemm_area2" parent="." instance=ExtResource("2_p452u")]
-position = Vector2(238, 247)
-modx = 1.0
-modjump = true
 
 [node name="lemm_spawn" parent="." instance=ExtResource("3_af8tb")]
 position = Vector2(-113, 242)
