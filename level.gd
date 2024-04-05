@@ -5,7 +5,7 @@ extends Node2D
 
 # player resource to solve level
 # format: x move(float), jump(bool), amount(int)
-@export var toolbox = [[1.0,true,1],[-.5,false,1],[-1.0, true,1]]
+const toolbox = [[1.0,true,1],[-.5,false,1],[-1.0, true,1]]
 var has_won = false
 
 

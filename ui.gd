@@ -23,25 +23,36 @@ func _input(event):
 	#Player imput:
 	#print("thait a imput")
 	#only clicks
-	
+	var error_flag = false 
 	#NOTE: maybe add removal on right click?
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		print("it a clic")
 		if active_tool == []:
 			print("select something dummy")
 			#cant place nothing
-			return
-		if active_tool[2] <= 0:
-			print("out of stuff")
-			#out of tools there
-			return
-		if get_global_mouse_position()<$"edit menu/minimum_bound".position and get_global_mouse_position()>$"edit menu/maximum_bound".position:
-			print("click in the bounds")
-			return
+			error_flag = true
+		if !error_flag:
+			if active_tool[2] <= 0:
+				print("out of stuff")
+				#out of tools there
+				error_flag = true
+		if get_global_mouse_position().x<$"edit menu/minimum_bound".position.x:
+			print("less then minimum x")
+			error_flag = true
+		if get_global_mouse_position().y<$"edit menu/minimum_bound".position.y :
+			print("less then minimum y")
+			error_flag = true
+		if get_global_mouse_position().x>$"edit menu/maximum_bound".position.x:
+			print("greater then maximum x")
+			error_flag = true
+		if get_global_mouse_position().y>$"edit menu/maximum_bound".position.y:
+			print("greater then maximum y")
+			error_flag = true
 		if !get_tree().paused:
 			print("go to the edit menu to edit")
+			error_flag = true
+		if error_flag:
 			return
-		
 		#all checks clear, time to place.
 		var director = unit_spawn.instantiate()
 		$"../..".add_child(director)
@@ -52,8 +63,6 @@ func _input(event):
 		director._ready()
 		# and decrease values
 		active_tool[2] -= 1
-		
-		active_node.toolid[2] -= 1
 		active_node.update_amount()
 		return
 
@@ -63,7 +72,7 @@ func fill_toolbox():
 		var instance = scene.instantiate()
 		$"edit menu/toolbox".add_child(instance)
 		instance.select.connect(on_button_select)
-		instance.toolid = toolset
+		instance.toolid = toolset.duplicate()
 		instance.load_tool()
 
 func resettools():
