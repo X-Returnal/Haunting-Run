@@ -10,16 +10,16 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$"play menu/progress".text = "Goals:"
-	if $"../..".has_won:
+	if $"../../..".has_won:
 		$"play menu/victory".visible=true
-	for goal_txt in $"../..".current_goals:
+	for goal_txt in $"../../..".current_goals:
 		$"play menu/progress".text+="\n"+goal_txt
 	
 	
 	
-func _input(event):
+func _input(_event):
 	#Player imput:
 	#print("thait a imput")
 	#only clicks
@@ -36,15 +36,16 @@ func _input(event):
 				print("out of stuff")
 				#out of tools there
 				error_flag = true
-		if get_global_mouse_position().x<$"edit menu/minimum_bound".position.x:
-			print("less then minimum x")
-			error_flag = true
+		#unneeded: no ui is located pass the x bound
+		#if get_global_mouse_position().x<$"edit menu/minimum_bound".position.x:
+		#	print("less then minimum x")
+		#	error_flag = true
 		if get_global_mouse_position().y<$"edit menu/minimum_bound".position.y :
 			print("less then minimum y")
 			error_flag = true
-		if get_global_mouse_position().x>$"edit menu/maximum_bound".position.x:
-			print("greater then maximum x")
-			error_flag = true
+		#if get_global_mouse_position().x>$"edit menu/maximum_bound".position.x:
+		#	print("greater then maximum x")
+		#	error_flag = true
 		if get_global_mouse_position().y>$"edit menu/maximum_bound".position.y:
 			print("greater then maximum y")
 			error_flag = true
@@ -55,7 +56,7 @@ func _input(event):
 			return
 		#all checks clear, time to place.
 		var director = unit_spawn.instantiate()
-		$"../..".add_child(director)
+		$"../../..".add_child(director)
 		director.position = get_global_mouse_position()
 		director.modx = active_tool[0]
 		director.modjump = active_tool[1]
@@ -68,7 +69,7 @@ func _input(event):
 
 func fill_toolbox():
 	
-	for toolset in $"../..".toolbox:
+	for toolset in $"../../..".toolbox:
 		var instance = scene.instantiate()
 		$"edit menu/toolbox".add_child(instance)
 		instance.select.connect(on_button_select)
