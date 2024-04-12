@@ -18,7 +18,7 @@ func _ready():
 	$Director1.set_visible(false)
 	$Director2.set_visible(false)
 	if isgoal:
-		$/root/level.set_goal(win_str)
+		$"..".set_goal(win_str)
 	if modon:
 		$Director0.set_visible(true)
 		if modjump:

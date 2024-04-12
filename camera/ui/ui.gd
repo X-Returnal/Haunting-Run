@@ -2,7 +2,7 @@ extends Control
 # format: x move(float), jump(bool), amount(int),tool button (node)
 var active_tool = []
 var active_node:Node
-var scene = preload("res://tool.tscn")
+var scene = preload("res://camera/ui/tool.tscn")
 @export var unit_spawn:PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():

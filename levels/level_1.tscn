@@ -1,0 +1,141 @@
+[gd_scene load_steps=19 format=3 uid="uid://dkut7e55avjsg"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_u2w4f"]
+[ext_resource type="PackedScene" uid="uid://dgo23c8ky1rge" path="res://camera/camera.tscn" id="2_lxqcn"]
+[ext_resource type="Texture2D" uid="uid://b50bbs265au0y" path="res://lemm/icon.svg" id="3_2ncn1"]
+[ext_resource type="PackedScene" uid="uid://dwbijnjft7fr6" path="res://spawn/lemm_spawn.tscn" id="4_wtqct"]
+[ext_resource type="PackedScene" uid="uid://dh1gtwy6bchqg" path="res://director/lemm_area_large.tscn" id="5_mqeu5"]
+[ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://director/lemm_area.tscn" id="6_dphdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvovp"]
+size = Vector2(384, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruppn"]
+size = Vector2(256, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsyv3"]
+size = Vector2(384, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3c8t"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24oe4"]
+size = Vector2(130, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq0rp"]
+size = Vector2(384, 58)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_epoxg"]
+polygon = PackedVector2Array(400, 72, 384, 128, 220.832, 139.733, 232, 200, 160, 192, 167.239, 140.849, 56, 120, 16, 72)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rog8e"]
+polygon = PackedVector2Array(400, 72, 400, 208, 400, 312, 360, 312, 368, 288, 376, 280, 376, 168, 32, 152, -520, 152, -872, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bal8l"]
+polygon = PackedVector2Array(952, 248, 432, 208, 424, 296, 448, 320, 400, 336, 400, 272, 400, 168, 400, 128, 400, 80, 1320, 80)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2y81u"]
+polygon = PackedVector2Array(360, 1400, 256, 1360, 400, 80, 544, 80)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7h75h"]
+polygon = PackedVector2Array(360, 1400, 256, 1360, 400, 80, 544, 80)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4gvvr"]
+polygon = PackedVector2Array(448, 1400, 256, 1360, 400, 80, 656, 80)
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_u2w4f")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_lxqcn")]
+position = Vector2(576, 328)
+limit = Vector4(-500, -1000, 2000, 1000)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(4944, 4224)
+scale = Vector2(107.539, 86.4141)
+texture = ExtResource("3_2ncn1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(832, -96)
+shape = SubResource("RectangleShape2D_fvovp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 615)
+shape = SubResource("RectangleShape2D_ruppn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, -95.5)
+shape = SubResource("RectangleShape2D_wsyv3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(192, 448)
+shape = SubResource("RectangleShape2D_r3c8t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(959, 447)
+shape = SubResource("RectangleShape2D_24oe4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 195)
+shape = SubResource("RectangleShape2D_mq0rp")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(368, 96)
+occluder = SubResource("OccluderPolygon2D_epoxg")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(112, -264)
+occluder = SubResource("OccluderPolygon2D_rog8e")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(240, -272)
+occluder = SubResource("OccluderPolygon2D_bal8l")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+position = Vector2(488, 304)
+occluder = SubResource("OccluderPolygon2D_2y81u")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(-280, 304)
+occluder = SubResource("OccluderPolygon2D_7h75h")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
+position = Vector2(48, 472)
+occluder = SubResource("OccluderPolygon2D_4gvvr")
+
+[node name="lemm_spawn" parent="." instance=ExtResource("4_wtqct")]
+position = Vector2(160, -208)
+progress_speed = 1000.0
+limit_spawn = 30
+
+[node name="lemm_area_large" parent="." instance=ExtResource("5_mqeu5")]
+position = Vector2(568, 504)
+modx = -1.0
+isgoal = true
+
+[node name="lemm_spawn2" parent="." instance=ExtResource("4_wtqct")]
+position = Vector2(984, -208)
+progress_speed = 1000.0
+limit_spawn = 30
+
+[node name="lemm_area_small" parent="." instance=ExtResource("6_dphdn")]
+position = Vector2(984, -208)
+modx = -1.0
+
+[node name="lemm_area_large2" parent="." instance=ExtResource("5_mqeu5")]
+position = Vector2(608, -80)
+
+[node name="lemm_area_large3" parent="." instance=ExtResource("5_mqeu5")]
+position = Vector2(552, -80)
+
+[node name="lemm_area_large4" parent="." instance=ExtResource("5_mqeu5")]
+position = Vector2(192, 352)
+generic_goal = 10
+win_str = "get 10 lights through the left entrence"
+
+[node name="lemm_area_large5" parent="." instance=ExtResource("5_mqeu5")]
+position = Vector2(960, 344)
+generic_goal = 10
+win_str = "get 10 lights through the right entrence"

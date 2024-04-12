@@ -1,3 +1,6 @@
+LightOccluder2D
+CollisionShape2D
+StaticBody2D
 CanvasLayer
 Panel
 Marker2D
@@ -6,10 +9,6 @@ Button
 Control
 PointLight2D
 DirectionalLight2D
-LightOccluder2D
 Timer
 Label
 Area2D
-CollisionShape2D
-Node2D
-Camera2D

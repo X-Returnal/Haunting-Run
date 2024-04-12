@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://n5d8qomxy7rg"]
 
-[ext_resource type="Script" path="res://ui.gd" id="1_uuirf"]
-[ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://lemm_area.tscn" id="2_nbiew"]
+[ext_resource type="Script" path="res://camera/ui/ui.gd" id="1_j87to"]
+[ext_resource type="PackedScene" uid="uid://bgj2wf7cnv78b" path="res://director/lemm_area.tscn" id="2_326oc"]
 
 [node name="ui" type="Control"]
 process_mode = 3
@@ -11,8 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uuirf")
-unit_spawn = ExtResource("2_nbiew")
+script = ExtResource("1_j87to")
+unit_spawn = ExtResource("2_326oc")
 
 [node name="edit menu" type="Control" parent="."]
 process_mode = 2

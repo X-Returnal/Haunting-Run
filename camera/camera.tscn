@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgo23c8ky1rge"]
+
+[ext_resource type="Script" path="res://camera/camera.gd" id="1_b1kuc"]
+[ext_resource type="PackedScene" uid="uid://n5d8qomxy7rg" path="res://camera/ui/ui.tscn" id="2_wox83"]
+
+[node name="Camera2D" type="Camera2D"]
+process_mode = 3
+editor_draw_limits = true
+script = ExtResource("1_b1kuc")
+limit = Vector4(500, 500, 500, 500)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("2_wox83")]

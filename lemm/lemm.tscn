@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0oym78vw24c3"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_qqqso"]
-[ext_resource type="Texture2D" uid="uid://b50bbs265au0y" path="res://icon.svg" id="2_774j3"]
+[ext_resource type="Script" path="res://lemm/player.gd" id="1_isvm5"]
+[ext_resource type="Texture2D" uid="uid://b50bbs265au0y" path="res://lemm/icon.svg" id="2_w80qp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6d3tp"]
 radius = 8.0
@@ -15,17 +15,17 @@ fill_to = Vector2(0, 1)
 
 [node name="lemm" type="CharacterBody2D" groups=["lemm"]]
 floor_stop_on_slope = false
-script = ExtResource("1_qqqso")
+script = ExtResource("1_isvm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
-texture = ExtResource("2_774j3")
+texture = ExtResource("2_w80qp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6d3tp")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1, -32)
+position = Vector2(-16, -16)
 scale = Vector2(107.539, 86.4141)
 energy = 0.1
 shadow_enabled = true
